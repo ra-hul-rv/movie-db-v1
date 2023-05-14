@@ -1,5 +1,6 @@
 import { Component,OnInit  } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -10,7 +11,7 @@ export class LoginComponent {
   form: FormGroup = new FormGroup({});
   flag: boolean = true;
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder,private router: Router) { }
 
   ngOnInit(): void {
     this.form = this.fb.group({
@@ -20,7 +21,12 @@ export class LoginComponent {
   }
 
   saveDetails(form: any) {
-    alert('SUCCESS!! :-)\n\n' + JSON.stringify(form.value, null, 4));
+    if (form.value.email === 'user@example.com' && form.value.password === 'password123') {
+      // Login successful, navigate to dashboard
+      this.router.navigate(['/dashboard']);
+    } else {
+      alert('Login failed. Please check your credentials and try again.');
+    }
   }
     
 }

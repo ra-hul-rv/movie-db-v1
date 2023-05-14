@@ -1,36 +1,62 @@
-<div class="login-container-main" >
-    <div class="login-container">
+<div class="signup-container-main" >
+    <div class="signup-container">
  
       
               <form [formGroup]="form" 
-            
+              (ngSubmit)="saveDetails(form)"
               autocomplete="off">
                   <div>
-                      <mat-form-field appearance="outline" >
+                      <mat-form-field appearance="outline" floatLabel="always"
+floatLabel="always" >
                           <mat-label>User name:</mat-label>
-                          <input matInput type="text" formControlName="username" placeholder="Enter userf name">
+                          <input matInput type="text" formControlName="username" placeholder="Enter user name" floatLabel="always">
                           <mat-icon matSuffix>person</mat-icon>
                       </mat-form-field>
                   </div>
                   <div>
-                      <mat-form-field appearance="outline" >
+                      <mat-form-field appearance="outline" floatLabel="always"
+floatLabel="always" >
                           <mat-label>Email:</mat-label>
-                          <input matInput type="email" formControlName="email" placeholder="Enter user email">
+                          <input matInput type="email" formControlName="email" placeholder="Enter user email" floatLabel="always">
                           <mat-icon matSuffix>mail_outlined</mat-icon>
                       </mat-form-field>
                   </div>
+                 
                   <div>
-                      <mat-form-field appearance="outline" >
-                          <mat-label>password</mat-label>
-                          <input matInput type="password" formControlName="pass" placeholder="Enter user password">
-                      </mat-form-field>
-                  </div>
-                
+                    <mat-form-field appearance="outline" floatLabel="always"
+floatLabel="always">
+                        <mat-label>Password </mat-label>
+                        <input matInput [type]="passflag ? 'password' : 'text'" placeholder="Enter your password "floatLabel="always"
+                            formControlName="password">
+                        <mat-icon (click)="passflag=!passflag" matSuffix>{{ passflag ? 'visibility' : 'visibility_off' }}</mat-icon>
+                        <mat-error *ngIf="form.controls['password'].errors?.['minlength']">
+                            Please enter more than 6 character
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                  <div>
+                    <mat-form-field appearance="outline" floatLabel="always"
+floatLabel="always">
+                        <mat-label>Confirm Password </mat-label>
+                        <input matInput [type]="confirmpassflag ? 'password' : 'text'" placeholder="Enter your password again"floatLabel="always"
+                            formControlName="confirmPassword">
+                        <mat-icon (click)="confirmpassflag=!confirmpassflag" matSuffix>{{ confirmpassflag ? 'visibility' : 'visibility_off' }}</mat-icon>
+                        <mat-error *ngIf="form.controls['confirmPassword'].errors?.['minlength']">
+                            Please enter more than 6 character
+                        </mat-error>
+                        <mat-error *ngIf="form.controls['confirmPassword'].hasError('confirmPassword')">Passwords does not match</mat-error>
+
+
+
+
+                    </mat-form-field>
+                </div>
+              
       
                   <div>
-                      <!-- <button mat-raised-button color="primary" type="submit" [disabled]="!form.valid">Login</button> -->
+                      <button mat-raised-button color="primary" type="submit" [disabled]="!form.valid">Signup</button>
                   </div>
       
               </form>
     </div>
- </div>
+</div>
