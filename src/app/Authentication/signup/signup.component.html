@@ -1,1 +1,36 @@
-<p>signup works!</p>
+<div class="login-container-main" >
+    <div class="login-container">
+ 
+      
+              <form [formGroup]="form" 
+            
+              autocomplete="off">
+                  <div>
+                      <mat-form-field appearance="outline" >
+                          <mat-label>User name:</mat-label>
+                          <input matInput type="text" formControlName="username" placeholder="Enter userf name">
+                          <mat-icon matSuffix>person</mat-icon>
+                      </mat-form-field>
+                  </div>
+                  <div>
+                      <mat-form-field appearance="outline" >
+                          <mat-label>Email:</mat-label>
+                          <input matInput type="email" formControlName="email" placeholder="Enter user email">
+                          <mat-icon matSuffix>mail_outlined</mat-icon>
+                      </mat-form-field>
+                  </div>
+                  <div>
+                      <mat-form-field appearance="outline" >
+                          <mat-label>password</mat-label>
+                          <input matInput type="password" formControlName="pass" placeholder="Enter user password">
+                      </mat-form-field>
+                  </div>
+                
+      
+                  <div>
+                      <!-- <button mat-raised-button color="primary" type="submit" [disabled]="!form.valid">Login</button> -->
+                  </div>
+      
+              </form>
+    </div>
+ </div>

@@ -5,8 +5,6 @@ import { AuthenticationRoutingModule } from './authentication-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import {MatButtonModule} from '@angular/material/button';
-// import {MatFormFieldModule} from '@angular/material/form-field';
-
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatInputModule } from '@angular/material/input';
@@ -16,9 +14,11 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatSelectModule } from '@angular/material/select';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatCardModule } from '@angular/material/card';
+import { SignupComponent } from './signup/signup.component';
 @NgModule({
   declarations: [
     LoginComponent,
+    SignupComponent
   ],
   imports: [
       CommonModule,
