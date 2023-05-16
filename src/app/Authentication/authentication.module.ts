@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { LoginComponent } from './Login/login.component';
 import { CommonModule } from '@angular/common';
 import { AuthenticationRoutingModule } from './authentication-routing.module';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {  ReactiveFormsModule } from '@angular/forms';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import {MatButtonModule} from '@angular/material/button';
 import { MatNativeDateModule } from '@angular/material/core';
@@ -23,7 +23,6 @@ import { SignupComponent } from './signup/signup.component';
   imports: [
       CommonModule,
       AuthenticationRoutingModule,
-      FormsModule,
       MatSlideToggleModule,
       MatButtonModule,
       ReactiveFormsModule,

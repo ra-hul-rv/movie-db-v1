@@ -23,8 +23,10 @@ export class LoginComponent {
   saveDetails(form: any) {
     if (form.value.email === 'user@example.com' && form.value.password === 'password123') {
       // Login successful, navigate to dashboard
+      localStorage.setItem('isAuthenticated', 'true')
       this.router.navigate(['/dashboard']);
     } else {
+      localStorage.setItem('isAuthenticated', 'false')
       alert('Login failed. Please check your credentials and try again.');
     }
   }

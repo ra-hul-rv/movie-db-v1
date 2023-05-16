@@ -10,7 +10,6 @@ export class SignupComponent {
  confirmPasswordValidator: ValidatorFn = (control: AbstractControl): ValidationErrors | null => {
     const passwordControl = control.get('password');
     const confirmPasswordControl = control.get('confirmPassword');
-  console.log(passwordControl,confirmPasswordControl)
     if (passwordControl?.value !== confirmPasswordControl?.value) {
       confirmPasswordControl?.setErrors({ confirmPassword:  true  });
       return { confirmPassword: true };
