@@ -8,6 +8,7 @@
       <p>{{ movie.description }}</p>
     </mat-card-content>
     <mat-card-actions class='card-action-container'>
-      <button mat-button color="primary">Watch trailer</button>
+      <button mat-raised-button color="primary" (click)="openMovieModal(movie.trailer)">Watch trailer</button>
+
     </mat-card-actions>
   </mat-card>

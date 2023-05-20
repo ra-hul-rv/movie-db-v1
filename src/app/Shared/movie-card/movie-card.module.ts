@@ -4,6 +4,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 
 import { MovieCardComponent } from './movie-card.component';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [MovieCardComponent],
@@ -11,6 +12,7 @@ import { MovieCardComponent } from './movie-card.component';
     CommonModule,
     MatCardModule,
     MatIconModule,
+    MatButtonModule,
   ],
   exports: [MovieCardComponent]
 })

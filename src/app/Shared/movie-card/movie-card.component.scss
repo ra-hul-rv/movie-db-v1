@@ -17,6 +17,7 @@ align-items: center;
     }
     .card-des-container{
       height:60px;
+      text-align: center;
       overflow: hidden;
       position: relative;
       ::after{
@@ -28,6 +29,20 @@ align-items: center;
       }
     }
     .card-action-container{
-
+    
+       button{
+        background-color: black;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        font-size: 16px;
+        transition: background-color 0.3s, box-shadow 0.3s;
+        cursor: pointer;
+        &:hover {
+          
+          background-color: #1a1a1a;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+                      }
+            }
     }
 }

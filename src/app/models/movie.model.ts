@@ -6,7 +6,7 @@ export interface Movie
     "description":any,
     "director":any,
     "genre":any,
-
+    trailer:any,
     "image":any,
     "imdbid":any,
     "rank":any,

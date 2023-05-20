@@ -10,6 +10,8 @@ import { MatGridListModule } from '@angular/material/grid-list';
 
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MovieCardModule } from '../Shared/movie-card/movie-card.module';
+import { MovieModalModule } from '../Shared/movie-modal/movie-modal.module';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 @NgModule({
   declarations: [NavbarComponent, HomepageComponent],
@@ -22,6 +24,8 @@ import { MovieCardModule } from '../Shared/movie-card/movie-card.module';
     MatTooltipModule, 
     MovieCardModule,
     MatGridListModule,
+    MovieModalModule,
+    MatPaginatorModule,
 
     
 

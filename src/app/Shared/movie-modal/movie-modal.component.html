@@ -1,1 +1,5 @@
-<p>movie-modal works!</p>
+
+  <mat-dialog-content class="iframe-container">
+    <iframe  [src]="youtubeVideoUrl" frameborder="0" allowfullscreen></iframe>
+  </mat-dialog-content>
+    <mat-icon  class="close-icon" (click)="closeDialog()">close</mat-icon>
