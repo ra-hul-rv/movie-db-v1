@@ -21,8 +21,7 @@ export class LoginComponent {
   }
 
   saveDetails(form: any) {
-    if (form.value.email === 'user@example.com' && form.value.password === 'password123') {
-      // Login successful, navigate to dashboard
+    if (form.value.email === 'user@example.com' && form.value.password === 'password@123') {
       localStorage.setItem('isAuthenticated', 'true')
       this.router.navigate(['/dashboard']);
     } else {
