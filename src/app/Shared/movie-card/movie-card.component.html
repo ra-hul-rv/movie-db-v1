@@ -1,8 +1,18 @@
 <mat-card class='single-card-container' >
+  
   <img class='card-image' mat-card-image [src]="movie.image" alt=" poster" />
-    <mat-card-header class='card-header'>
-      <mat-card-title class='card-title'>{{ movie.title }}</mat-card-title>
-    </mat-card-header>
+  <div class="action-icons-overlay-container" >
+    <div class="favorite-icon" (click)="toggleFavorite()">
+      <mat-icon [color]="movie.favorite ? 'warn' : 'primary'">favorite</mat-icon>
+    </div>
+    <mat-icon class="watched-icon" [ngClass]="{ 'watched': movie.isWatched }" (click)="toggleWatched()">
+      {{ movie.isWatched ? 'visibility' : 'visibility_off' }}
+    </mat-icon>
+  </div>
+  <mat-card-header class="card-header">
+    <mat-card-title class="card-title">{{ movie.title }}</mat-card-title>
+    
+  </mat-card-header>
     <!-- <img class='card-image' mat-card-image [src]="movie.thumbnail" alt=" poster" /> -->
     <mat-card-content class='card-des-container'>
       <p>{{ movie.description }}</p>
@@ -11,4 +21,5 @@
       <button mat-raised-button color="primary" (click)="openMovieModal(movie.trailer)">Watch trailer</button>
 
     </mat-card-actions>
+ 
   </mat-card>

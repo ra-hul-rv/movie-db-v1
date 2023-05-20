@@ -7,6 +7,8 @@ export interface Movie
     "director":any,
     "genre":any,
     trailer:any,
+    favorite:boolean,
+    isWatched:boolean,
     "image":any,
     "imdbid":any,
     "rank":any,

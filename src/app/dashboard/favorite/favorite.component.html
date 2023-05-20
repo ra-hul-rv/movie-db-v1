@@ -1,0 +1,16 @@
+<div>
+  <app-navbar></app-navbar>
+  <div class="main-grid-container">
+    <div class="single-grid-element-container" *ngFor="let movie of movies">
+      <ng-container *ngIf="movie.favorite">
+        <app-movie-card [movie]="movie"></app-movie-card>
+      </ng-container>
+    </div>
+  </div>
+  <div class="paginator-container">
+    <mat-paginator [length]="totalMovies"
+                   [pageSize]="pageSize"
+                   [pageSizeOptions]="pageSizeOptions"
+                   (page)="onPageChange($event)"></mat-paginator>
+  </div>
+</div>

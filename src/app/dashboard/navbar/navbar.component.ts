@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -6,5 +7,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent {
+  constructor(private router:Router){
 
+  }
+routeTo(location:string):void{
+this.router.navigate([location]);
+}
+logout():void{
+  localStorage.setItem('isAuthenticated','false')
+  this.router.navigate(['login']);
+}
 }

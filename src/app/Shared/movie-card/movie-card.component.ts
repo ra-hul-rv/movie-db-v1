@@ -19,4 +19,10 @@ export class MovieCardComponent {
       data: { youtubeVideoUrl }
     });
   }
+  toggleFavorite(): void {
+    this.movie.favorite = !this.movie.favorite; 
+  }
+  toggleWatched(): void {
+    this.movie.isWatched = !this.movie.isWatched; 
+   }
 }
