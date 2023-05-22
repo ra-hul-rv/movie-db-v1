@@ -14,6 +14,10 @@ export class LoginComponent {
   constructor(private fb: FormBuilder,private router: Router) { }
 
   ngOnInit(): void {
+    const isAuthenticated=localStorage.getItem('isAuthenticated');
+    if(isAuthenticated==='true'){
+      this.router.navigate(['/dashboard']);
+    }
     this.form = this.fb.group({
       email: [null, [Validators.required, Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")]],
       password: [null, [Validators.required, Validators.minLength(6)]],

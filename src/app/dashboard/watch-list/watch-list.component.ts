@@ -31,7 +31,10 @@ export class WatchListComponent implements OnInit {
     this.paginatorIntl.nextPageLabel = 'Next page';
     this.paginatorIntl.previousPageLabel = 'Previous page';
   }
+  hasWatchedMovies(){
+    return this.movies.filter((m: any) => m.isWatched).length > 0;
 
+  }
   onPageChange(event: PageEvent) {
     const startIndex = event.pageIndex * event.pageSize;
     const endIndex = startIndex + event.pageSize;

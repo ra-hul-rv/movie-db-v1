@@ -1,5 +1,7 @@
 <div>
   <app-navbar></app-navbar>
+  <ng-container *ngIf="hasWatchedMovies(); else noDataMessage">
+
   <div class="main-grid-container">
     <div class="single-grid-element-container" *ngFor="let movie of movies">
       <ng-container *ngIf="movie.isWatched">
@@ -13,4 +15,14 @@
                    [pageSizeOptions]="pageSizeOptions"
                    (page)="onPageChange($event)"></mat-paginator>
   </div>
+</ng-container>
+<ng-template #noDataMessage>
+  <div class="no-data-message">
+    <img src="assets/images/empty-box.png" alt="no data"/>
+    <p>
+
+      No Watched movies.
+    </p>
+  </div>
+</ng-template>
 </div>

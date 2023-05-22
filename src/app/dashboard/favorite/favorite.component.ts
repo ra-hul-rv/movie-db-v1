@@ -31,7 +31,9 @@ export class FavoriteComponent implements OnInit {
     this.paginatorIntl.nextPageLabel = 'Next page';
     this.paginatorIntl.previousPageLabel = 'Previous page';
   }
-
+  hasFavoriteMovies(){
+   return this.movies.filter((m: any) => m.favorite).length > 0;
+  }
   onPageChange(event: PageEvent) {
     const startIndex = event.pageIndex * event.pageSize;
     const endIndex = startIndex + event.pageSize;
