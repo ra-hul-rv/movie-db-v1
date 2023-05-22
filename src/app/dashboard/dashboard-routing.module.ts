@@ -5,6 +5,7 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { WatchListComponent } from './watch-list/watch-list.component';
 
 const routes: Routes = [
+  {path: '', redirectTo: 'dashboard', pathMatch: 'full' },
   {path:'dashboard',component :HomepageComponent},
   {path:'favorite',component :FavoriteComponent},
   {path:'watch-list',component :WatchListComponent},

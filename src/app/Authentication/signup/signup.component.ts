@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import {  AbstractControl, FormBuilder, FormGroup, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { users } from 'src/app/Data/users';
 
 @Component({
   selector: 'app-signup',
@@ -7,6 +9,7 @@ import {  AbstractControl, FormBuilder, FormGroup, ValidationErrors, ValidatorFn
   styleUrls: ['./signup.component.scss']
 })
 export class SignupComponent {
+  users :any []=users
  confirmPasswordValidator: ValidatorFn = (control: AbstractControl): ValidationErrors | null => {
     const passwordControl = control.get('password');
     const confirmPasswordControl = control.get('confirmPassword');
@@ -22,7 +25,7 @@ form : FormGroup =new FormGroup({});
 passflag: boolean = true;
 confirmpassflag: boolean = true;
 
-constructor (private fb:FormBuilder)
+constructor (private fb:FormBuilder,private router:Router)
 {
  
 }
@@ -36,8 +39,12 @@ ngOnInit():void{
    { validator: this.confirmPasswordValidator }
    )
 }
+backToLogin(){
+  this.router.navigate(['login']);
+}
 saveDetails(form: any) {
-  alert('SUCCESS!! :-)\n\n' + JSON.stringify(form.value, null, 4));
+  this.users.push(form.value);
+  this.router.navigate(['login']);
 }
   
 }

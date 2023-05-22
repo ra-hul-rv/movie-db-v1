@@ -1,6 +1,7 @@
 import { Component,OnInit  } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { users } from 'src/app/Data/users';
 
 @Component({
   selector: 'app-login',
@@ -23,9 +24,13 @@ export class LoginComponent {
       password: [null, [Validators.required, Validators.minLength(6)]],
     });
   }
-
+  goToRegister(){
+    this.router.navigate(['/register']);
+  }
   saveDetails(form: any) {
-    if (form.value.email === 'user@example.com' && form.value.password === 'password@123') {
+    const user = users.find(u => u.email === form.value.email && u.password === form.value.password);
+console.log(users)
+    if (user) {
       localStorage.setItem('isAuthenticated', 'true')
       this.router.navigate(['/dashboard']);
     } else {
