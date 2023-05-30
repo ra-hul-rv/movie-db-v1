@@ -1,19 +1,20 @@
-.main-grid-container{
-padding: 20px;
-display: flex;
-align-items: center;
-flex-wrap: wrap;
-justify-content: center;
-gap:20px;
-    .single-grid-element-container{
-        
-       
-    }
-    
+.main-grid-container {
+  background-color: #111427;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
 }
-.paginator-container{
-display: flex;
-align-items: center;
-justify-content: center;
-width: 100%;
+.paginator-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background-color: #111427;
+}
+.mat-mdc-paginator-container {
+  background-color: red !important;
+  border-radius: 14px;
 }

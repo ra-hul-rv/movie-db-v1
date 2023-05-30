@@ -1,5 +1,7 @@
 .main-grid-container {
   padding: 20px;
+  background-color: #111427;
+  height: 100vh;
   display: flex;
   align-items: center;
   flex-wrap: wrap;
@@ -8,6 +10,9 @@
 }
 .paginator-container {
   display: flex;
+  background-color: #111427;
+  padding-bottom: 50px;
+
   align-items: center;
   justify-content: center;
   width: 100%;

@@ -6,7 +6,7 @@
             </div>
      
              <form [formGroup]="form" (ngSubmit)="saveDetails(form)" autocomplete="off">
-                 <div>
+                 <div class="form-element">
                      <mat-form-field appearance="outline" floatLabel="always" >
                          <mat-label>Email Address:</mat-label>
                          <input matInput type="email" formControlName="email" placeholder="Your email">
@@ -16,13 +16,13 @@
                      </mat-form-field>
                  </div>
      
-                 <div>
+                 <div class="form-element">
                      <mat-form-field appearance="outline" floatLabel="always">
                          <mat-label>Password </mat-label>
                          <input matInput [type]="flag ? 'password' : 'text'" placeholder="Enter your password"
                              formControlName="password">
                          <mat-icon (click)="flag=!flag" matSuffix>{{ flag ? 'visibility' : 'visibility_off' }}</mat-icon>
-                         <mat-error>Name is required</mat-error>
+                         <mat-error>password is required</mat-error>
                          <mat-error *ngIf="form.controls['password'].errors?.['minlength']">
                              Please enter more than 6 character
                          </mat-error>
@@ -35,7 +35,7 @@
                  </div>
      
              </form>
-             <div>
+             <div class="register-link-container">
                 <span>Dont have an account ?</span>
                 <span class="register-link" (click)="goToRegister()" >Register</span>
              </div>

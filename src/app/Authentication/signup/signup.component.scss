@@ -1,15 +1,55 @@
 .signup-container-main {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #f8f8f8;
   width: 100%;
   height: 100%;
-  background-image: url("../../../assets//images/frame2.jpg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+  .signup-container-redstrip {
+    z-index: 5;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url("../../../assets//images/redstrips.svg");
+    // background-repeat: no-repeat;
+    background-position: center;
+    .hello-title {
+      font-size: 104px;
+      font-weight: 500;
+      color: #fff;
+      position: absolute;
+      font-family: "Noto Sans", sans-serif;
+      letter-spacing: 1px;
+      z-index: 4;
+      top: 38%;
+      left: 20%;
+      transform: rotate(-45deg);
+    }
+  }
+  .signup-container-backdrop {
+    background-image: url("../../../assets//images/poolsleep.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 6;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  background-image: radial-gradient(at 25% top, #32112c 0%, #0a1526 40%);
+  @media screen and (max-width: 408px) {
+    background-color: #ffffff;
+    background-image: linear-gradient(
+      180deg,
+      #ffffff 0%,
+      #f5c4ef 46%,
+      #fde0b1 100%
+    );
+
+    background-size: auto;
+  }
+
   .signup-container {
+    width: fit-content;
     .login-link {
       cursor: pointer;
       font-size: 14;
@@ -18,17 +58,25 @@
         color: blue;
       }
     }
-    // background-image: url("../../../assets//images/frame.jpg");
-    background-repeat: no-repeat;
-    background-position: center;
-    // background-size: cover;
+    @media screen and (min-width: 768px) {
+      .register-link-container {
+        color: #000;
+        .register-link {
+          &:hover {
+            color: blue;
+          }
+        }
+      }
+    }
+
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(18px) saturate(80%);
+    border: 1px solid #221329;
     z-index: 1;
-    background-attachment: fixed;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    //   background-color: #fff;
     border-radius: 24px;
     padding: 50px;
     gap: 40px;
